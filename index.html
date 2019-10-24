@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+        <h1 class="text-light text-center my-3">Lazy Loading / Intersection Observer Method</h1>
+      <section class="img-container ">
+         
+          <div class="img-card first">
+              <img src="./assets/img/amsterda.jpg" data-src="./assets/img/amsterda.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/amsterda.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/anemone.jpg" data-src="./assets/img/anemone.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/anemone.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/apples.jpg" data-src="./assets/img/apples.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/apples.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/asparagus.jpg" data-src="./assets/img/asparagus.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/asparagus.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/vegetables-avocado.jpg" data-src="./assets/img/vegetables-avocado.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/vegetables-avocado.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/baby-cat.jpg" data-src="./assets/img/baby-cat.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/baby-cat.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/baby-ducks.jpg" data-src="./assets/img/baby-ducks.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/baby-ducks.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/beetroot.jpg" data-src="./assets/img/beetroot.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/beetroot.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/berries.jpg" data-src="./assets/img/berries.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/berries.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/bing-cherries.jpg" data-src="./assets/img/bing-cherries.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/bing-cherries.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/bird.jpg" data-src="./assets/img/bird.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/bird.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/blueberries.jpg" data-src="./assets/img/blueberries.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/blueberries.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/brothers.jpg" data-src="./assets/img/brothers.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/brothers.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/brown-hors.jpg" data-src="./assets/img/brown-hors.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/brown-hors.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/cherries-in-bascket.jpg" data-src="./assets/img/cherries-in-bascket.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/cherries-in-bascket.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/cat-gray.jpg" data-src="./assets/img/cat-gray.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/cat-gray.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/children-lauthing.jpg" data-src="./assets/img/children-lauthing.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/children-lauthing.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/coconut-big.jpg" data-src="./assets/img/coconut-big.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/coconut-big.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/coconut.jpg" data-src="./assets/img/coconut.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/coconut.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/eating.jpg" data-src="./assets/img/eating.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/eating.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/equine.jpg" data-src="./assets/img/equine.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/equine.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/flower-orange.jpg" data-src="./assets/img/flower-orange.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/flower-orange.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/flower-tultip.jpg" data-src="./assets/img/flower-tultip.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/flower-tultip.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/giraffe-baby.jpg" data-src="./assets/img/giraffe-baby.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/giraffe-baby.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/horse-in-the-nature.jpg" data-src="./assets/img/horse-in-the-nature.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/horse-in-the-nature.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/horse-white.jpg" data-src="./assets/img/horse-white.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/horse-white.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/horse-with-bride.jpg" data-src="./assets/img/horse-with-bride.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/horse-with-bride.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/hyacinth.jpg" data-src="./assets/img/hyacinth.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/hyacinth.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/insects.jpg" data-src="./assets/img/insects.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/insects.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/jam-peach.jpg" data-src="./assets/img/jam-peach.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/jam-peach.jpg alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/kid-model.jpg" data-src="./assets/img/kid-model.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/kid-model.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/lilac-flower.jpg" data-src="./assets/img/lilac-flower.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/lilac-flower.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/macarons.jpg" data-src="./assets/img/macarons.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/macarons.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/orange.jpg" data-src="./assets/img/orange.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/orange.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/pea-green.jpg" data-src="./assets/img/pea-green.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/pea-green.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/piza-marrgeritta.jpg" data-src="./assets/img/piza-marrgeritta.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/piza-marrgeritta.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/poppy-in-white.jpg" data-src="./assets/img/poppy-in-white.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/poppy-in-white.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/potatoes-row.jpg" data-src="./assets/img/potatoes-row.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/potatoes-row.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/pumpkin-in-backet.jpg" data-src="./assets/img/pumpkin-in-backet.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/pumpkin-in-backet.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/rabbit-in-forest.jpg" data-src="./assets/img/rabbit-in-forest.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/rabbit-in-forest.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/ranunculus-white.jpg" data-src="./assets/img/ranunculus-white.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/ranunculus-white.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/ranunculus.jpg" data-src="./assets/img/ranunculus.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/ranunculus.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/roses-in-vase.jpg" data-src="./assets/img/roses-in-vase.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/roses-in-vase.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/roses-pinck.jpg" data-src="./assets/img/roses-pinck.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/roses-pinck.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/roses.jpg" data-src="./assets/img/roses.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/roses.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/round-leaved-bellflower.jpg" data-src="./assets/img/round-leaved-bellflower.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/round-leaved-bellflower.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/schrecksee.jpg" data-src="./assets/img/schrecksee.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/schrecksee.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/single-tomato.jpg" data-src="./assets/img/single-tomato.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/single-tomato.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/sisters-babys.jpg" data-src="./assets/img/sisters-babys.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/sisters-babys.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/smoothie-berry.jpg" data-src="./assets/img/smoothie-berry.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/smoothie-berry.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/still-life.jpg" data-src="./assets/img/still-life.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/still-life.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/strawberries.jpg" data-src="./assets/img/strawberries.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/strawberries.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/suculentus-plant.jpg" data-src="./assets/img/suculentus-plant.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/suculentus-plant.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/sunset.jpg" data-src="./assets/img/sunset.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/sunset.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/swans.jpg" data-src="./assets/img/swans.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/swans.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/tangerines.jpg" data-src="./assets/img/tangerines.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/thiry-horses.jpg" data-src="./assets/img/thiry-horses.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/thiry-horses.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/tomato-red.jpg" data-src="./assets/img/tomato-red.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/tomato-red.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/tomatoes.jpg" data-src="./assets/img/tomatoes.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/tomatoes.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/tulips-pinck.jpg" data-src="./assets/img/tulips-pinck.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/tulips-pinck.jpg" alt="" title=""></noscript>
+          </div>                   
+          <div class="img-card">
+              <img src="./assets/img/vegetables-in-bascket.jpg" data-src="./assets/img/vegetables-in-bascket.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/vegetables-in-bascket.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/water-lily.jpg" data-src="./assets/img/water-lily.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/water-lily.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/white-horse-in-winter.jpg" data-src="./assets/img/white-horse-in-winter.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/white-horse-in-winter.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/wild-flower.jpg" data-src="./assets/img/wild-flower.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/wild-flower.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/wild-flowers.jpg" data-src="./assets/img/wild-flowers.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/wild-flowers.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/woman-model.jpg" data-src="./assets/img/woman-model.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/woman-model.jpg" alt="" title=""></noscript>
+          </div>          
+          <div class="img-card">
+              <img src="./assets/img/woman.jpg" data-src="./assets/img/woman.jpg" alt="" title="" class="img-fluid">
+              <noscript><img src="./assets/img/woman.jpg" alt="" title=""></noscript>
+          </div>          
+      </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
