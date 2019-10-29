@@ -7,13 +7,13 @@ function ImgLazyLoading() {
     };
 
     function IntersectionCallBack(entries, observer) {
-        entries.forEach(element => {
+        entries.forEach(function(element) {
             if (element.isIntersecting) {
                 let lazyImg = element.target,
                     lazyImgParent = lazyImg.parentElement;
                 lazyImg.classList.add("no-visible-c");
 
-                lazyImg.onload = () => {
+                lazyImg.onload = function() {
                     lazyImgParent.style.height = lazyImg.height + 20 + "px";
                     lazyImg.classList.add("visible-c");
                     lazyImg.classList.remove("no-visible-c");
@@ -28,11 +28,13 @@ function ImgLazyLoading() {
     };
 
     const observer = new IntersectionObserver(IntersectionCallBack, options)
-    lazyImgArr.forEach(element => {
+    lazyImgArr.forEach(function(element) {
         observer.observe(element);
     })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+   
     ImgLazyLoading();
+  
 });
