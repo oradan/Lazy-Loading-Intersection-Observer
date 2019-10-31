@@ -18,9 +18,9 @@ body{
     padding: 10px;
     background-color: #f8f9fa;
     margin: 10px 0px 0px 0px;
-    display: inline-block;
+    /* display: inline-block;
     width: 100%;
-    height: 300px
+    height: 300px */
 }
 
 .img-container .img-card img.no-visible-c{
@@ -30,30 +30,59 @@ body{
     opacity: 1;
     transition: opacity 0.7s ease-in-out
 }
+.first{display: inline-block}
+.second,.third,.fourth{
+    display: none;
+}
+.col-img {
+    float: right;
+}
 
+.col-img >div{
+    padding: 10px;
+    background-color: #f8f9fa;
+    margin: 10px 5px 5px 10px;
+}
+.col-img{
+    width: 100%;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {  
- .img-container{
-    column-count: 2;
+ .second{
+     display: inline-block;
  }
+ .col-img{
+    width: 50%;
+}
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
-    .img-container{
-        column-count: 3;
+    .third{
+        display: inline-block;
+    }
+    .col-img{
+        width: 33.33%;
     }
 }
  
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-    .img-container{
-        column-count: 4;
+    .fourth{
+        display: inline-block;
+    }
+    .col-img{
+        width: 25%;
     }
 }
  
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
-    .img-container{}
+
 }
  
