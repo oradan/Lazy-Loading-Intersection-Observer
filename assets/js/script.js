@@ -36,7 +36,7 @@ function ImgLazyLoading() {
 function getVisibleColumns() {
     var columnsArr = document.querySelectorAll(".col-img"),
         visibleColumns = [];
-    columnsArr.forEach((element) => {
+    columnsArr.forEach(function (element) {
         var elementDisplayValue = window.getComputedStyle(element).display
         if (elementDisplayValue != "none") {
             visibleColumns.push(element);
@@ -49,7 +49,7 @@ function getColumnMinHeight() {
     var columns = getVisibleColumns(),
         columnHeigths = [],
         minHeight = null;
-    columns.forEach((element) => {
+    columns.forEach(function (element) {
         var elementHeight = parseInt(window.getComputedStyle(element).height);
         columnHeigths.push(elementHeight);
     });
@@ -60,30 +60,22 @@ function getColumnMinHeight() {
 function displayImages() {
     var columnArr = getVisibleColumns();
 
-    imgArr.forEach((e, i) => {
-
-        var imgCardHtml = document.createElement('div'),
+    imgArr.forEach(function (e, i) {
+        var img = new Image();
+        img.classList.add('img-fluid');
+        img.src = e.url;
+        img.onload = function () {
             colMinHeight = getColumnMinHeight();
-        imgCardHtml.innerHTML = '<div class="img-card"><img src="' + e.url + '" class="img-fluid"></div>';
-
-        if (colMinHeight === 0) {
-            columnArr[i].appendChild(imgCardHtml)  
-        } else {
-            columnArr.forEach((item)=>{
-                var currElementHeight = parseInt(window.getComputedStyle(item).height),
-                colMinHeight = getColumnMinHeight();
-                if(currElementHeight===colMinHeight){
-                    item.appendChild(imgCardHtml)
-                }
-    
-    
+            var smallestColumn = columnArr.find(function (e) {
+                return colMinHeight === parseInt(window.getComputedStyle(e).height)
             })
+            smallestColumn.appendChild(img)
+            img.classList.add('visible-c');
         }
-
- 
+        if (i === imgArr.length - 1) {
+            img.classList.add('lazy-img');
+        }
     })
-
-
 
 
 }
