@@ -1,7 +1,4 @@
 
-
-
-
 /**
  * Array.prototype.forEach() polyfill
  * @author Chris Ferdinandi
