@@ -32,10 +32,11 @@ function getVisibleColumns() {
 };
 
 function getColumnMinHeight() {
-    var columnHeigths = getVisibleColumns().map(function (element) {
-        return parseInt(window.getComputedStyle(element).height)
+    var minHeight = parseInt(window.getComputedStyle(getVisibleColumns()[0]).height);
+    getVisibleColumns().forEach(function (element) {
+        var elementHeight = parseInt(window.getComputedStyle(element).height);
+        minHeight = (minHeight <= elementHeight) ? minHeight : elementHeight;
     });
-    var minHeight = Math.min.apply(null, columnHeigths);
     return minHeight;
 };
 
@@ -69,6 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // getImageData('assets/data/data-img-0.json').then(function (data) {
     //     displayImages(data);
     //  }).then(ImgInfiniteScrolling())
-
+    // getColumnMinHeight()
     ImgInfiniteScrolling();
 });
