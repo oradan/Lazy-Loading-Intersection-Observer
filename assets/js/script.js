@@ -31,13 +31,17 @@ function getVisibleColumns() {
     return visibleColumns;
 };
 
-function getColumnMinHeight() {
+function getSmallestColumn() {
     var minHeight = parseInt(window.getComputedStyle(getVisibleColumns()[0]).height);
-    getVisibleColumns().forEach(function (element) {
+    return getVisibleColumns().map(function (element) {
         var elementHeight = parseInt(window.getComputedStyle(element).height);
         minHeight = (minHeight <= elementHeight) ? minHeight : elementHeight;
-    });
-    return minHeight;
+        return element
+    }).find(function (e) {
+        return parseInt(window.getComputedStyle(e).height) === minHeight
+
+    })
+
 };
 
 function displayImages(data) {
@@ -47,10 +51,7 @@ function displayImages(data) {
         img.classList.add('img-fluid');
         img.src = e.url;
         img.onload = function () {
-            var smallestColumn = getVisibleColumns().find(function (e) {
-                return getColumnMinHeight() === parseInt(window.getComputedStyle(e).height)
-            });
-            smallestColumn.appendChild(img);
+            getSmallestColumn().appendChild(img);
             img.classList.add('visible-c');
         };
     });
@@ -66,10 +67,13 @@ function getImageData(url) {
         })
 };
 
+function myFunction() {
+    console.log("hahahaha")
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // getImageData('assets/data/data-img-0.json').then(function (data) {
     //     displayImages(data);
     //  }).then(ImgInfiniteScrolling())
-    // getColumnMinHeight()
-    ImgInfiniteScrolling();
+     ImgInfiniteScrolling();
 });
