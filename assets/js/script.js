@@ -32,16 +32,18 @@ function getVisibleColumns() {
 };
 
 function getSmallestColumn() {
-    var minHeight = parseInt(window.getComputedStyle(getVisibleColumns()[0]).height);
-    return getVisibleColumns().map(function (element) {
+    var minHeight = parseInt(window.getComputedStyle(getVisibleColumns()[0]).height),
+        smallestCol;
+
+    getVisibleColumns().forEach(function (element) {
         var elementHeight = parseInt(window.getComputedStyle(element).height);
-        minHeight = (minHeight <= elementHeight) ? minHeight : elementHeight;
-        return element
-    }).find(function (e) {
-        return parseInt(window.getComputedStyle(e).height) === minHeight
+        if(elementHeight <= minHeight) {
+            minHeight = elementHeight;
+            smallestCol = element;
+        }
+    });
 
-    })
-
+    return smallestCol;
 };
 
 function displayImages(data) {
